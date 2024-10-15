@@ -1,0 +1,121 @@
+Jenkins Assignment 1:
+
+You are tasked with creating below Jenkins utilities to control operations in a Git repository.
+- Branch Exist:
+    - Check if a specified branch exists in the repository.
+- Create Branch:
+    - Create a new branch in the repository.
+- Merge 2 Branches:
+    - Merge two branches
+    - In case of failure generate an HTML report
+- Delete Branch:
+    Delete a specified branch in the repository.
+- List commit logs of Certain Branch
+    - Should be able to accept search parameters
+    - Should show it in HTML report
+Good to do:
+    - Managed these jobs via JOB DSL
+
+
+Assignment 2:
+
+
+Topics Covered:  (User Authentication, User Authorization)
+     Assignment on Authentication and Authorization
+        Their is an organization which has 3 teams
+            - Developer
+            - Devops
+            - Testing
+        First you need to create 9 dummy jenkins jobs.Each job will print their jobname, build number.
+            For Developer create 3 dummy jobs.In developer view
+                job1:- dev-1
+                job2:- dev-2
+                job3:- dev-3
+            For Testing create 3 dummy jobs. In testing view
+                job1:- test-1
+                job2:- test-2
+                job3:- test-3
+            For Devops create 3 dummy jobs. In devops view
+                job1:- devops-1
+                job2:- devops-2
+                job3:- devops-3
+        Users in each team: 
+            developer: [ They can see only dev jobs, can build it, see workspace and configure it ]
+                - developer-1 
+                - developer-2 
+            testing: [ They can see all test jobs ,can build it, see workspace and can configure it, | They can also view dev jobs ]
+                - testing-1 
+                - testing-2 
+            devops:  [ They can see all devops jobs ,can build it, see workspace and can configure it, | They can also view dev and test jobs  ]
+                - devops-1 
+                - devops-2
+            admin
+                -  admin-1 [ It will have full access ]
+        See what Authorization strategy suits it and implement it.
+        Also go through all authorization strategy
+        Legacy mode
+        Project Based
+        Matrix Based
+        Role-Based
+        Point 2:-
+        Enable SSO with Goggle
+
+
+
+
+To install jenkins in ubuntu
+
+udo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian/jenkins.io-2023.key
+[2:58 PM] echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+[2:58 PM] sudo apt-get update
+[2:59 PM] sudo apt-get install jenkins
+[2:59 PM] sudo apt update
+[2:59 PM] sudo apt install fontconfig openjdk-17-jre
+[2:59 PM] java -version
+
+
+Assignment 03:
+Perform CI checks on three Repositories using Jenkins, store reports, manage artifacts, set up failure notifications, and automate the process using DSL job.
+
+API Repositories:
+
+- Python:- https://github.com/OT-MICROSERVICES/attendance-api
+- GoLang:- https://github.com/OT-MICROSERVICES/employee-api
+- Java:- https://github.com/OT-MICROSERVICES/salary-api
+
+Jenkins Freestyle Jobs:
+Create separate jobs for each check.
+Configure to pull repositories from GitHub.
+- Implement Generic & Advance CI Checks (eg: Credential Scanning, Unit Testing, Code Coverage, Dependency etc.)
+- Store and access reports within Jenkins.
+- Choose local or remote storage for artifact.
+- Configure email, Slack, or Telegram notifications on CI check failures.
+Now,Implement a DSL job to automate the entire process for CI checks on all APIs.
+
+
+Assignment:-04
+1. Perform CI Checks On Below Apis Using Declarative Pipeline
+    (eg: clean, clone, cred scan, unit test, code coverage, dependency check etc. ).
+    {Mandatory} - Java:- https://github.com/OT-MICROSERVICES/salary-api
+    {Optional}  - GoLang:- https://github.com/OT-MICROSERVICES/employee-api
+    {Optional}  - Python:- https://github.com/OT-MICROSERVICES/attendance-api
+ 3. Should store Reports of ALL CI checks.
+ 4. Artifact should be stored locally or remote. 
+ 4. Notification should be sent email/slack/telegram.
+ Optional:- 
+    - Try Same with scripted pipeline.
+
+
+Assignment_05 : Assignment on configuring Nodes
+ 
+1] Configure an Ubuntu node using the execution of a command on the master method. 
+         - Make sure at any point in time, a maximum of 5 jobs can be executed on this node.
+         - Assign this node to Assignment 1
+
+2] Configure a RHEL node using  Launch slave agents via SSH method. 
+         - Make sure at any point of time a maximum of 2 jobs can be executed on this node.
+         - Assign this node to Assignment 2 
+
+3] Configure a CentOS node using Launch slave agents via SSH method. 
+         - Make sure at any point in time a maximum of 3 jobs can be executed on this node.
+         - Assign this node to Assignment 3

@@ -1,0 +1,118 @@
+
+#####################################################################################
+Assigment-1
+#####################################################################################
+
+Create a utility to host a static website via Docker with below features:
+
+    - The website should be accessed via your team domain name i.e
+        - <name>.<team-name>.com
+        - mohan.ntd.com
+    - The website should be up and running in below intervals
+        - 10-12
+        - 4-6
+    - Modify the utility so that in which first half it would be printing your name and in second half your buddy name. i.e below will be the output of curl command
+        - 10-12 | Hello from Mohan
+        - 4-6 | Hell from Pankaj
+        
+Part2
+
+Create a new container.
+
+Create One directory Structure:
+
+Data
+
+ Ninjas
+
+   Mohan
+   Uma
+   Shikha
+   Mayank
+
+Now make sure that if this container is getting run by Mohan then Mohan should be able to Write on Mohand Directory only and for others Mohan should only be able to read it.
+
+
+
+#####################################################################################
+Assigment-2
+#####################################################################################
+
+Create a DockerFile.
+    Use Ubuntu latest image.
+    Add your name as a Manintainer.
+    Update local packages using command (apt-get update).
+    Install nodejs package.
+    Install npm package.
+    Create a symlink using command (ln -s /usr/bin/nodejs /usr/bin/node).
+    Trigger a command (npm install -g http-server)
+    Add any test index.html file from local at /usr/apps/hello-docker/index.html on container.
+    change your working directory to /usr/apps/hello-docker/.
+    Run a command (http-server -s) on every container initialization.
+    Build your dockerfile and tag it with "yourname:docker-web"
+    Run a docker container from the image that you have just created and map container 8080 port to host 8080 port.(8080:8080)
+    Try accessing your webpage using "http://<virtualmachine_ipaddress>:8080/index.html" URL.
+    Delete docker container and image from local
+
+
+#####################################################################################
+Assigment-3
+#####################################################################################
+
+  Create a file named index.js with below content.
+    index.js
+    var os = require("os"); var hostname = os.hostname(); console.log("hello from " + hostname);
+    Create a file named Dockerfile and write code as per the steps mentioned.
+    Use alpine image.
+    Add Author/Maintainer name in DockerFile
+    run commands -> apk update & apk add nodejs
+    copy current directory to /app
+    change your working directory to /app
+    specify the default command to be run upon container creation as mentioned below. node index.js
+    Build image from Dockerfile.
+    Tag image with name "hello:v0.1"
+
+
+#####################################################################################
+Assigment-4
+#####################################################################################
+In this assignment we will be working on Docker-Compose file in pair of 2, for our OT-Microservice App:
+Step1: Setup the OT-MICROSERVICE  application fully Clone the code and run the app .
+Step2: Now delete the code from your local system and run the app fully
+Step3: Now your buddy in his/her system without cloning the code will run the app fully.
+Step4: Ensure your Employee, Salary and Attendance service are highly available.
+Bonus Assignment: Also Explore other power features of docker compose i.e You only want to run Attendance and MySQL container.
+
+
+
+**************ASSIGNMENT****************************
+In this Assignment we will be creating pods for our OT-MICROSERVICE Application:
+Step1: Attendance Setup
+    - Option 1:
+        * Run MySQL in one pod
+        * Run attendance in one pod
+    - Option 2:
+        * Attendance & MySQL in one pod
+    - Validation
+
+Step2:
+    - Run ES pod
+        * Validation
+    - Run Salary pod
+        * Ensure connectivity with ES pod
+        * Validation
+    - Run Employee pod
+        * Ensure connectivity with ES pod
+        * Validation
+
+Step3:
+    - Run Frontend pod
+        * Validation
+    - Run Webserver pod
+        * Validation
+        
+
+
+******************ASSIGNMENT**************************
+In this assignment we will try to understand what Deployments and RelicaSets are in K8s.
+This time try to deploy OT-Microservice Application using Deployments and ReplicaSets.
